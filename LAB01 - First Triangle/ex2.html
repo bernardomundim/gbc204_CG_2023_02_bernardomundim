@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+
+void
+main()
+{
+    gl_Position = vPosition;
+    gl_PointSize  = 8.0;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+void
+main()
+{
+    gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="ex2.js"></script>
+</head>
+<body>
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+<!--Diferenças entre formas de desenho:
+LINES: pega vertices em pares e desenha uma linmha entre eles.
+LINE_STRIP: desenha uma linha entre os vertices adjacentes
+LINE_LOOP: alem de desenhar uma linha entre os vertices adjacentes, desenha uma adicional entre o ultimo e o primeiro vertice
+
+TRIANGLE: conecta cada 3 vertices em um triangulo
+TRIANGLE_STRIP: desenha uma serie de triangulos conectados em faixa
+TRIANGLE_FAN: desenha uma serie de traingulos compartilhando do primeiro vertice-->  
+</html>
+
